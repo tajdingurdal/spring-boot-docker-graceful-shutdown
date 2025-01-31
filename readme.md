@@ -2,7 +2,7 @@
 - docker-compose -f .\docker\services.yaml build --no-cache
 - docker-compose -f .\docker\services.yaml up
 
-After starting the container, and send an api request to test:
+After starting the container, send an API request to test:
 
 - docker kill --signal="SIGTERM" imageID
 
