@@ -1,0 +1,15 @@
+name: graceful-shutdown
+services:
+  graceful-shutdown-app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: spring-boot-graceful-shutdown
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: curl --fail http://localhost:8080/actuator/health || exit 1
+      interval: 60s
+      retries: 5
+      timeout: 10s
+    stop_grace_period: 30s

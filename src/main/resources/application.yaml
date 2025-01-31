@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: graceful-shutdown
+
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+server:
+  shutdown: graceful
+  port: 8080
